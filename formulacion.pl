@@ -1,5 +1,7 @@
 :- [elementos.pl]
 
+% RULES
+
 atom_chars(co2, L).
 
 remove_char(S,C,X) :- 
@@ -7,12 +9,10 @@ remove_char(S,C,X) :-
 	atom_concat(C,W,R), 
 	atom_concat(L,W,X).
 
+obtener_nombre(Compuesto, Nombres) : -
+	atom_chars(Compuesto, Nombres).
 
-append('Di', 'oxido ', 'de ', 'carbono').
-
-formulacion_oxidos(C, F) : -
-	atom_chars(C, L),
-
+% FACTS
 
 prefijo(1, 'mono').
 prefijo(2, 'di').
