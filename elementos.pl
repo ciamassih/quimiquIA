@@ -1,123 +1,123 @@
-elemento('H').
-elemento('Li').
-elemento('Na').
-elemento('K').
-elemento('Rb').
-elemento('Cs').
-elemento('Fr').
-elemento('Be').
-elemento('Mg').
-elemento('Ca').
-elemento('Sr').
-elemento('Ba').
-elemento('Ra').
-elemento('Sc').
-elemento('Y').
-elemento('Lu').
-elemento('Lr').
-elemento('Ti').
-elemento('V').
-elemento('Cr').
-elemento('Mn').
-elemento('Fe').
-elemento('Ru').
-elemento('Co').
-elemento('Rh').
-elemento('Ni').
-elemento('Cu').
-elemento('Ag').
-elemento('Zn').
-elemento('Cd').
-elemento('B').
-elemento('Al').
-elemento('Ga').
-elemento('In').
-elemento('Tl').
-elemento('C').
-elemento('Si').
-elemento('Ge').
-elemento('Sn').
-elemento('Pb').
-elemento('N').
-elemento('P').
-elemento('As').
-elemento('Sb').
-elemento('Bi').
-elemento('O').
-elemento('S').
-elemento('Se').
-elemento('Te').
-elemento('Po').
-elemento('F').
-elemento('Cl').
-elemento('Br').
-elemento('I').
-elemento('At').
-elemento('He').
-elemento('Ne').
-elemento('Ar').
-elemento('Kr').
-elemento('Xe').
-elemento('Rn').
+elemento(h).
+elemento(li).
+elemento(na).
+elemento(k).
+elemento(rb).
+elemento(cs).
+elemento(fr).
+elemento(be).
+elemento(mg).
+elemento(ca).
+elemento(sr).
+elemento(ba).
+elemento(ra).
+elemento(sc).
+elemento(y).
+elemento(lu).
+elemento(lr).
+elemento(ti).
+elemento(v).
+elemento(cr).
+elemento(mn).
+elemento(fe).
+elemento(ru).
+elemento(co).
+elemento(rh).
+elemento(ni).
+elemento(cu).
+elemento(ag).
+elemento(zn).
+elemento(cd).
+elemento(b).
+elemento(al).
+elemento(ga).
+elemento(in).
+elemento(tl).
+elemento(c).
+elemento(si).
+elemento(ge).
+elemento(sn).
+elemento(pb).
+elemento(n).
+elemento(p).
+elemento(as).
+elemento(sb).
+elemento(bi).
+elemento(o).
+elemento(s).
+elemento(se).
+elemento(te).
+elemento(po).
+elemento(f).
+elemento(cl).
+elemento(br).
+elemento(i).
+elemento(at).
+elemento(he).
+elemento(ne).
+elemento(ar).
+elemento(kr).
+elemento(xe).
+elemento(rn).
 
-nombre_elemento('H', hidrogeno).
-nombre_elemento('Li', litio).
-nombre_elemento('Na', sodio).
-nombre_elemento('K', potasio).
-nombre_elemento('Rb', rubidio).
-nombre_elemento('Cs', cesio).
-nombre_elemento('Fr', francio).
-nombre_elemento('Be', berilio).
-nombre_elemento('Mg', magnesio).
-nombre_elemento('Ca', calcio).
-nombre_elemento('Sr', estroncio).
-nombre_elemento('Ba', bario).
-nombre_elemento('Ra', radio).
-nombre_elemento('Sc', escandio).
-nombre_elemento('Y', itrio).
-nombre_elemento('Lu', lutencio).
-nombre_elemento('Lr', laurencio).
-nombre_elemento('Ti', titanio).
-nombre_elemento('V', vanadio).
-nombre_elemento('Cr', cromo).
-nombre_elemento('Mn', manganeso).
-nombre_elemento('Fe', hierro).
-nombre_elemento('Ru', rutenio).
-nombre_elemento('Co', cobalto).
-nombre_elemento('Rh', rodio).
-nombre_elemento('Ni', niquel).
-nombre_elemento('Cu', cobre).
-nombre_elemento('Ag', plata).
-nombre_elemento('Zn', zinc).
-nombre_elemento('Cd', cadmio).
-nombre_elemento('B', boro).
-nombre_elemento('Al', aluminio).
-nombre_elemento('Ga', galio).
-nombre_elemento('In', idio).
-nombre_elemento('Tl', talio).
-nombre_elemento('C', carbono).
-nombre_elemento('Si', silicio).
-nombre_elemento('Ge', germanio).
-nombre_elemento('Sn', estaño).
-nombre_elemento('Pb', plomo).
-nombre_elemento('N', nitrogeno).
-nombre_elemento('P', fosforo).
-nombre_elemento('As', arsenico).
-nombre_elemento('Sb', antimonio).
-nombre_elemento('Bi', bismuto).
-nombre_elemento('O', oxigeno).
-nombre_elemento('S', azufre).
-nombre_elemento('Se', selenio).
-nombre_elemento('Te', telurio).
-nombre_elemento('Po', polonio).
-nombre_elemento('F', fluor).
-nombre_elemento('Cl', cloro).
-nombre_elemento('Br', bromo).
-nombre_elemento('I', yodo).
-nombre_elemento('At', astato).
-nombre_elemento('He', helio).
-nombre_elemento('Ne', neon).
-nombre_elemento('Ar', argon).
-nombre_elemento('Kr', kripton).
-nombre_elemento('Xe', xenon).
-nombre_elemento('Rn', radon).
+nombre_elemento(h, hidrogeno).
+nombre_elemento(li, litio).
+nombre_elemento(na, sodio).
+nombre_elemento(k, potasio).
+nombre_elemento(rb, rubidio).
+nombre_elemento(cs, cesio).
+nombre_elemento(fr, francio).
+nombre_elemento(be, berilio).
+nombre_elemento(mg, magnesio).
+nombre_elemento(ca, calcio).
+nombre_elemento(sr, estroncio).
+nombre_elemento(ba, bario).
+nombre_elemento(ra, radio).
+nombre_elemento(sc, escandio).
+nombre_elemento(y, itrio).
+nombre_elemento(lu, lutecio).
+nombre_elemento(lr, laurencio).
+nombre_elemento(ti, titanio).
+nombre_elemento(v, vanadio).
+nombre_elemento(cr, cromo).
+nombre_elemento(mn, manganeso).
+nombre_elemento(fe, hierro).
+nombre_elemento(ru, rutenio).
+nombre_elemento(co, cobalto).
+nombre_elemento(rh, rodio).
+nombre_elemento(ni, niquel).
+nombre_elemento(cu, cobre).
+nombre_elemento(ag, plata).
+nombre_elemento(zn, zinc).
+nombre_elemento(cd, cadmio).
+nombre_elemento(b, boro).
+nombre_elemento(al, aluminio).
+nombre_elemento(ga, galio).
+nombre_elemento(in, indio).
+nombre_elemento(tl, talio).
+nombre_elemento(c, carbono).
+nombre_elemento(si, silicio).
+nombre_elemento(ge, germanio).
+nombre_elemento(sn, estaño).
+nombre_elemento(pb, plomo).
+nombre_elemento(n, nitrogeno).
+nombre_elemento(p, fosforo).
+nombre_elemento(as, arsenico).
+nombre_elemento(sb, antimonio).
+nombre_elemento(bi, bismuto).
+nombre_elemento(o, oxigeno).
+nombre_elemento(s, azufre).
+nombre_elemento(se, selenio).
+nombre_elemento(te, telurio).
+nombre_elemento(po, polonio).
+nombre_elemento(f, fluor).
+nombre_elemento(cl, cloro).
+nombre_elemento(br, bromo).
+nombre_elemento(i, yodo).
+nombre_elemento(at, astato).
+nombre_elemento(he, helio).
+nombre_elemento(ne, neon).
+nombre_elemento(ar, argon).
+nombre_elemento(kr, kripton).
+nombre_elemento(xe, xenon).
+nombre_elemento(rn, radon).
