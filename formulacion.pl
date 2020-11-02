@@ -1,82 +1,98 @@
 :- ['elementos.pl'].
 
 % RULES
-remove_char(S,C,X) :- 
-	atom_concat(L,R,S), 
-	atom_concat(C,W,R), 
-	atom_concat(L,W,X).
+% Regla para invertir los elementos correctamente
+invertir_elemento([X,Y,Z|R], E) :-
+	atom_concat(X,Y,W),
+	elemento(W),
+	nombre_elemento(Z, oxigeno), 
+	reverse([Y,X,Z|R], E).
 
-obtener_elementos(Compuesto, Elementos) :-
-	atom_chars(Compuesto, Elementos).
+invertir_elemento([X,Y,Z,W|R], E) :-
+	atom_concat(X,Y,Q),
+	elemento(Q),
+	prefijo(Z, _),
+	nombre_elemento(W, oxigeno),
+	reverse([Y,X,Z,W|R],E).
 
-obtener_nombres([X|R], Nombres) :-
-	nombre_elemento(X, Nombres),
-	obtener_nombres(R, Nombres).
+invertir_elemento([X|R], [E|S]) :-
+	reverse([X|R], [E|S]).
 
-% ----- TRY 2 -----
-nomenclatura(Compuesto, Nombre) :-
-	atom_chars(Compuesto, Elementos),
-	renombrar_elementos(Elementos, Elementos2),
-	pertenece(oxigeno, Elementos2),
-	reverse(Elementos2, Elementos3),
-	formulacion(Elementos3, Nombre).
+% Regla para convertir los caracteres en enteros
+string_elemento([X|R] , [E|S]) :-
+	atom_number(X, E),
+	string_elemento(R, S).
 
-renombrar_elementos([X|R], [E|S]) :- 
-	nombre_elemento(X, E), 
-	renombrar_elemento(R, S).
+string_elemento([X|R], [X|S]) :-
+	string_elemento(R, S).
 
-renombrar_elementos([X|R], [E|S]) :- 
-	prefijo(X, E), 
-	renombrar_elementos(R, S).
+string_elemento([], []).
 
-renombrar_elementos([X|R], ['oxido'|S]) :- 
-	nombre_elemento(X, oxigeno), 
-	renombrar_elementos(R,S).
+% Regla para comprobar que se trata de óxido
+es_oxido([X|_], _) :-
+	nombre_elemento(X, oxigeno).
 
-pertenece(X, [_,Y]) :- pertenece(X,Y).
-
-% ---- TRY 3 ----
-cabeza_lista([X|_], X).
-cola_lista([_|X], X).
-
-inversa([], E, E).
-inversa([X|R], E, Acc) :- inversa(R, E, [X|Acc]).
-
-elemento_existente([], []).
-
-elemento_existente([X|R], [E|S]) :-
-	Cabeza = X,
-	cabeza_lista(R, Cola),
-	atom_concat(Cabeza, Cola, E),
-	elemento(E),
-	cola_lista(R, A),
-	elemento_existente(A, S).
-
-elemento_existente([X|R], [X|S]) :-
+es_oxido([X,Y|_], _) :-
 	prefijo(X, _),
-	elemento_existente(R, S).
+	nombre_elemento(Y, oxigeno).
 
-elemento_existente([X|R], [X|S]) :-
-	elemento(X),
-	elemento_existente(R, S).
+% Regla para pasar de los elementos del compuesto a sus nombres 
+elemento_nombre([X|R], [E|S]) :-
+	prefijo(X, E),
+	elemento_nombre(R, S).
 
-es_oxido([X|R], X) :- cabeza_lista(R, o).
-es_oxido([X|R], X) :- es_oxido(R, X).
+elemento_nombre([o|R], [oxido,de|S]) :-
+	elemento_nombre(R, S).
 
-simbolo_elemento([X|R], [E|S]) :-
+elemento_nombre([X,Y|R],[E|S]) :-
+	atom_concat(X, Y, Z),
+	nombre_elemento(Z, E),
+	elemento_nombre(R,S).
+
+elemento_nombre([X|R], [E|S]) :-
 	nombre_elemento(X, E),
-	simbolo_elemento(R, S).
+	elemento_nombre(R,S),
+	\+ (X = o).
 
-simbolo_elemento([X|R], [E|S]) :-
-	prefijo(X,E),
-	simbolo_elemento(R, S).
+elemento_nombre([], []).
 
-simbolo_elemento([X|R], [oxido|S]) :-
-	nombre_elemento(X, oxigeno),
-	simbolo_elemento(R, S).
+% Regla para añadir el prefijo 'mono' a los elementos con solo un 'oxigeno' (opcional)
+annadir_prefijo([oxido|R], S) :-
+	prefijo(1, X),
+	append([X],[oxido|R], S).
+
+% Regla para formar el compuesto con sus nombres
+formular([oxido,X,Y|_], E) :-
+	nombre_elemento(_, Y),
+	atomic_list_concat([oxido,X,Y], ' ', W),
+	atom_string(W, E).
+
+formular([X,oxido,Y,Z|_], E) :-
+	prefijo(_, X),
+	nombre_elemento(_, Z),
+	atomic_list_concat([X,oxido,' ',Y,' ',Z], '', W),
+	atom_string(W, E).
+
+formular([oxido,X,Y,Z|_], E) :-
+  atomic_list_concat([oxido,' ',X,' ',Y,Z], '', W),
+	atom_string(W, E).
+
+formular([X,oxido,Y,Z,Q|_], E) :-
+	prefijo(_, X),
+	atomic_list_concat([X,oxido,' ',Y,' ',Z,Q], '', W),
+	atom_string(W, E).
+
+% Componer el compuesto químico
+compuesto_quimico(X, R) :-
+	atom_chars(X, StringElementos),
+	string_elemento(StringElementos, Elementos),
+	invertir_elemento(Elementos, Elementos2),
+	es_oxido(Elementos2, _),
+	elemento_nombre(Elementos2, Q),
+	formular(Q,R).
 
 % FACTS
-prefijo(1, 'mono').
+prefijo(1, 'mon').
 prefijo(2, 'di').
 prefijo(3, 'tri').
-prefijo(4, 'tetra').
+aprefijo(4, 'tetra').
