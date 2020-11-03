@@ -1,4 +1,4 @@
-# quimiquIA
+# Química IA
 
 ## PROBLEMA A SOLUCIONAR
 El problema que se ha decidido solucionar es el de la **formulación de compuestos químicos**, unicamente óxidos, mediante el uso del lenguaje de programación prolog.
