@@ -21,4 +21,4 @@ Por último la regla **compuesto_quimico** hace uso de todas las reglas anterior
 Aqui se añade las posibilidades de tipos de óxidos que existen, siendo estos: mono, di, tri y tetra siendo uno, dos, tres y cuatro respectivamente
 
 ## DIAGRAMA DE FLUJO
-[](diagramaDeFlujo.png) 
+![](diagramaDeFlujo.png) 
