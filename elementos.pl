@@ -60,6 +60,8 @@ elemento(kr).
 elemento(xe).
 elemento(rn).
 elemento(hg).
+elemento(au).
+
 
 nombre_elemento(h, hidrogeno).
 nombre_elemento(li, litio).
@@ -123,3 +125,4 @@ nombre_elemento(kr, kripton).
 nombre_elemento(xe, xenon).
 nombre_elemento(rn, radon).
 nombre_elemento(hg, mercurio).
+nombre_elemento(au, oro).

@@ -1,8 +1,9 @@
 # quimiquIA
 
 ## PROBLEMA A SOLUCIONAR
-El problema que se ha decidido solucionar es el de la **formulacion de compuestos quimicos**, unicamente óxidos, mediante el uso de prolog.
-El funcionamiento del programa es simple y es el siguiente: Al iniciar prolog es necesario iniciarlo con la base de conocimientos formulacion.pl y una vez iniciado se pregunta el compuesto del que deseamos conocer la formulacion mediante la regla *compuesto_quimico*.
+El problema que se ha decidido solucionar es el de la **formulación de compuestos químicos**, unicamente óxidos, mediante el uso del lenguaje de programación prolog.
+
+El funcionamiento del programa es simple y es el siguiente: Al iniciar prolog es necesario iniciarlo con la base de conocimientos formulacion.pl y una vez iniciado se pregunta el compuesto del que deseamos conocer la formulacion mediante la regla **compuesto_quimico(Elemento, X).**.
 
 ## REGLAS
 La regla **invertir_elemento** es la encargada de dar la vuelta a los elementos, reordenandolos de manera que la formulacion salga de manera correcta y coherente.
@@ -18,3 +19,7 @@ Por último la regla **compuesto_quimico** hace uso de todas las reglas anterior
 
 ## FACTS
 Aqui se añade las posibilidades de tipos de óxidos que existen, siendo estos: mono, di, tri y tetra siendo uno, dos, tres y cuatro respectivamente
+
+## DIAGRAMA DE FLUJO
+![alt text][diagrama]
+[logo]: diagramaDeFlujo.png

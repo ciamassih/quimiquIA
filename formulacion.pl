@@ -16,9 +16,10 @@ invertir_elemento([X,Y,Z,W|R], E) :-
 	reverse([Y,X,Z,W|R],E).
 
 invertir_elemento([X|R], [E|S]) :-
-	reverse([X|R], [E|S]).
+	reverse([X|R], [E|S]),
+	\+ (X = o).
 
-% Regla para convertir los caracteres en enteros
+% Regla para convertir los caracteres en números 
 string_elemento([X|R] , [E|S]) :-
 	atom_number(X, E),
 	string_elemento(R, S).
@@ -56,10 +57,12 @@ elemento_nombre([X|R], [E|S]) :-
 
 elemento_nombre([], []).
 
-% Regla para añadir el prefijo 'mono' a los elementos con solo un 'oxigeno' (opcional)
+% Regla para añadir el prefijo 'mon' a los elementos con solo un átomo de 'oxígeno'
 annadir_prefijo([oxido|R], S) :-
 	prefijo(1, X),
 	append([X],[oxido|R], S).
+
+annadir_prefijo([X|R], [X|R]).
 
 % Regla para formar el compuesto con sus nombres
 formular([oxido,X,Y|_], E) :-
@@ -88,11 +91,12 @@ compuesto_quimico(X, R) :-
 	string_elemento(StringElementos, Elementos),
 	invertir_elemento(Elementos, Elementos2),
 	es_oxido(Elementos2, _),
-	elemento_nombre(Elementos2, Q),
+	elemento_nombre(Elementos2, Elementos3),
+	annadir_prefijo(Elementos3, Q),
 	formular(Q,R).
 
 % FACTS
-prefijo(1, 'mon').
-prefijo(2, 'di').
-prefijo(3, 'tri').
-aprefijo(4, 'tetra').
+prefijo(1, mon).
+prefijo(2, di).
+prefijo(3, tri).
+prefijo(4, tetra).
