@@ -53,12 +53,6 @@ elemento(cl).
 elemento(br).
 elemento(i).
 elemento(at).
-elemento(he).
-elemento(ne).
-elemento(ar).
-elemento(kr).
-elemento(xe).
-elemento(rn).
 elemento(hg).
 elemento(au).
 
@@ -118,11 +112,5 @@ nombre_elemento(cl, cloro).
 nombre_elemento(br, bromo).
 nombre_elemento(i, yodo).
 nombre_elemento(at, astato).
-nombre_elemento(he, helio).
-nombre_elemento(ne, neon).
-nombre_elemento(ar, argon).
-nombre_elemento(kr, kripton).
-nombre_elemento(xe, xenon).
-nombre_elemento(rn, radon).
 nombre_elemento(hg, mercurio).
 nombre_elemento(au, oro).
